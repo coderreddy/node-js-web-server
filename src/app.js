@@ -48,7 +48,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         menu: 'API Info',
-        type: 'General Inquiry',
+        type: 'Navigate to Home page or /weather resource for weather data',
         createdBy: 'Krishna',
         Version: '1.0'
     })
