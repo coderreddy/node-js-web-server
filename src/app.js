@@ -5,9 +5,14 @@ const hbs = require('hbs')
 const publicFiles = (__dirname, path.resolve('./public'))
 const viewFiles = (__dirname, path.resolve('./templates/views'))
 const partialFiles = (__dirname, path.resolve('./templates/partials'))
-const geo = (__dirname, path.resolve('../weather-app/utils/geoCode.js'))
-const weather = (__dirname, path.resolve('../weather-app/utils/weather-service.js'))
+const geo = (__dirname, path.resolve('./utils/geoCode.js'))
+const weather = (__dirname, path.resolve('./utils/weather-service.js'))
 
+//Fetch files from cross projects
+//const geo = (__dirname, path.resolve('../weather-app/utils/geoCode.js'))
+//const weather = (__dirname, path.resolve('../weather-app/utils/weather-service.js'))
+
+const port = process.env.PORT || 7000
 const geoCode = require(geo)
 const weatherApi = require(weather)
 const app = express();
@@ -94,6 +99,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(7000, () => {
+app.listen(port, () => {
     console.log('Express Server Started')
 });

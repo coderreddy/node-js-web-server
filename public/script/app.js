@@ -1,6 +1,6 @@
 
 const getData = (city, state, callback) => {
-    fetch('http://localhost:7000/weather?city=' + city + '&' + 'state=' + state).then((response) => {
+    fetch('/weather?city=' + city + '&' + 'state=' + state).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 callback(data.error, undefined)
