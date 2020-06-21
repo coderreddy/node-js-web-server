@@ -67,9 +67,9 @@ app.get('/weather', (req, res) => {
             })
         }
         weatherApi(latitude, longitude, (error, { current, location } = {}) => {
-            const { temperature, feelslike } = current
+            const { temperature, feelslike, humidity } = current
             const { name, country, region } = location
-            const forecast = current.weather_descriptions[0] + '. Its currently ' + temperature + ' degress out. It Feels like ' + feelslike + ' degress out.';
+            const forecast = current.weather_descriptions[0] + '. Its currently ' + temperature + ' degress out. It Feels like ' + feelslike + ' degress out. The Humidity is ' + humidity + '%';
             const loc = 'City: ' + name + ', Country: ' + country + ', Region: ' + region
             res.send({
                 forecast,

@@ -12,8 +12,8 @@ const weatherApiCall = (latitude, longitude, callback) => {
                     console.log(chalk.red.inverse('Weather API call failed with error: ' + JSON.stringify(body.error)));
                     callback(body.error,undefined)
             } else {
-                    const {temperature, feelslike} = body.current
-                    console.log(chalk.green.inverse(body.current.weather_descriptions[0] + '. Its currently ' + temperature + ' degress out. It Feels like ' + feelslike + ' degress out.'));
+                    const {temperature, feelslike, humidity} = body.current
+                    console.log(chalk.green.inverse(body.current.weather_descriptions[0] + '. Its currently ' + temperature + ' degress out. It Feels like ' + feelslike + ' degress out. The Humidity is ' + humidity + '%'));
                     callback(undefined,body);
             }
     });
