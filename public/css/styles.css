@@ -62,3 +62,9 @@ button {
     color: white;
     cursor: pointer;
 }
+
+.para {
+    color: black;
+    font-family: cursive;
+    padding: 0 16px;
+}
